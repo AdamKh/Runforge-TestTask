@@ -10,14 +10,15 @@ body {
 }
 
 main {
-  padding: 0 2rem;
+  padding: 2rem 0;
   margin: 0 auto;
+  max-width: 1240px;
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-family-playfair-display);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-extrabold);
   color: var(--font-color-secondary);
 }
