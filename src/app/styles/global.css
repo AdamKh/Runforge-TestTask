@@ -1,5 +1,5 @@
 html {
-  font-family: var(--font-family);
+  font-family: var(--font-family-inter);
   font-size: var(--font-size-main);
   font-weight: var(--font-weight-main);
   color: var(--font-color-main);
@@ -7,4 +7,17 @@ html {
 
 body {
   background-color: var(--bg-main);
+}
+
+main {
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-playfair-display);
+  font-weight: var(--font-weight-bold);
+  color: var(--font-color-secondary);
 }
