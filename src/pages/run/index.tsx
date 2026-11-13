@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { fetchRuns } from "@/entities/run/api/fetchRuns";
 import type { Run } from "@/entities/run/model/types";
-import { RunCard } from "@/entities/run/ui";
+import { RunCard } from "@/entities/run/ui/runCard";
 
 import styles from "./styles.module.css";
 

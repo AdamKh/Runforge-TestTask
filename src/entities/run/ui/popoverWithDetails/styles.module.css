@@ -1,0 +1,55 @@
+.popover {
+  position: relative;
+
+  background-color: var(--bg-accent);
+  border: 1px solid var(--border-main);
+  border-radius: var(--border-radius-default);
+
+  padding: 1rem;
+  max-width: 32rem;
+  width: 100%;
+
+  .popoverTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+
+    color: var(--font-color-secondary);
+
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .detailsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .runNameWrapper {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .logs {
+      background-color: var(--bg-secondary);
+      border-radius: var(--border-radius-normal);
+      padding: 1rem;
+
+      color: var(--font-color-accent);
+
+      .log {
+        display: block;
+
+        font-size: var(--font-size-small);
+        line-height: var(--font-size-main);
+      }
+    }
+  }
+
+  .closeBtn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}

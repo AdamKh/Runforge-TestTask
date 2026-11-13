@@ -10,9 +10,9 @@ body {
 }
 
 main {
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   margin: 0 auto;
-  max-width: 1240px;
+  max-width: calc(1240px + 2rem);
 }
 
 h1,
@@ -21,4 +21,10 @@ h3 {
   font-family: var(--font-family-playfair-display);
   font-weight: var(--font-weight-extrabold);
   color: var(--font-color-secondary);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
