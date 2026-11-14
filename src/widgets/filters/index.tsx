@@ -15,6 +15,7 @@ interface IRunsProps {
   setSearchValue: (value: string) => void;
   setFiltersValue: (value: string[]) => void;
   setSortValue: (value: string | null) => void;
+  disabled?: boolean;
 }
 
 export function Filters({
@@ -24,9 +25,18 @@ export function Filters({
   setSearchValue,
   setFiltersValue,
   setSortValue,
+  disabled = false,
 }: IRunsProps) {
-  const [search, setSearch] = useState(searchValue);
+  const [search, setSearch] = useState<string>(searchValue);
+  const [prevSearchValue, setPrevSearchValue] = useState<string>(searchValue);
+
   const debouncedSearch = useDebounce(search, 250);
+
+  // Чтобы правильно работал сброс
+  if (searchValue !== prevSearchValue) {
+    setPrevSearchValue(searchValue);
+    setSearch(searchValue);
+  }
 
   useEffect(() => {
     if (debouncedSearch !== searchValue) {
@@ -41,6 +51,7 @@ export function Filters({
         type="search"
         name="search"
         allowClear
+        disabled={disabled}
         prefix={<Search color="var(--font-color-main)" />}
         placeholder="Search by name"
         value={search}
@@ -52,6 +63,7 @@ export function Filters({
         prefix={<Funnel color="var(--font-color-main)" />}
         mode="multiple"
         allowClear
+        disabled={disabled}
         options={filterOptions}
         value={filtersValue}
         onChange={(values: string[]) => setFiltersValue(values)}
@@ -61,6 +73,7 @@ export function Filters({
         placeholder="Sort"
         prefix={<ListSortAscending color="var(--font-color-main)" />}
         allowClear
+        disabled={disabled}
         options={sortOptions}
         value={sortValue}
         onChange={(value: string) => setSortValue(value)}

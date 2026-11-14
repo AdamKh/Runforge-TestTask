@@ -45,27 +45,6 @@
     }
   }
 
-  .showMoreButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0.5rem;
-
-    color: var(--font-color-accent);
-    font-weight: var(--font-weight-semibold);
-
-    background-color: var(--bg-secondary);
-    border-radius: var(--border-radius-normal);
-
-    transition: transform 0.3s var(--flow-ease);
-
-    &:hover {
-      transform: translateY(-2px);
-    }
-  }
-
   .runStatus {
     position: absolute;
     right: 1rem;

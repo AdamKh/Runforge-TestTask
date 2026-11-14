@@ -8,12 +8,21 @@ export const useRun = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
 
-  useEffect(() => {
+  const load = () =>
     fetchRuns()
       .then((runs) => setRuns(runs))
       .catch(() => setIsError(true))
       .finally(() => setIsLoading(false));
+
+  const refetch = () => {
+    setIsLoading(true);
+    setIsError(false);
+    load();
+  };
+
+  useEffect(() => {
+    load();
   }, []);
 
-  return { runs, isLoading, isError };
+  return { runs, isLoading, isError, refetch };
 };

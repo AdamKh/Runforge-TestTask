@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { Book, CalendarClock, GitBranch, Hourglass, Info } from "lucide-react";
 
 import { formatCreatedAt, formatDuration } from "@/shared/lib/date";
+import { Button } from "@/shared/ui";
 import { InfoItem } from "@/shared/ui/info";
 
 import type { Run } from "../../model/types";
@@ -50,14 +51,11 @@ export function RunCard({ run }: RunCardProps) {
           </div>
         </div>
 
-        <button
-          type="button"
-          className={styles.showMoreButton}
+        <Button
+          label="Details"
+          customIcon={<Info size={20} color="var(--font-color-accent)" />}
           onClick={() => setPopoverOpen(true)}
-        >
-          <Info size={20} color="var(--font-color-accent)" />
-          <span>Details</span>
-        </button>
+        />
 
         <div className={classNames(styles.runStatus, styles[run.status])}>
           <span>{run.status.toUpperCase()}</span>
