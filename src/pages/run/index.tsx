@@ -21,7 +21,7 @@ export function RunPage() {
     searchValueParam ?? "",
   );
   const [filtersValue, setFiltersValue] = useState<string[]>(
-    filtersValueParam?.slice(1, -1).split(",") ?? [],
+    filtersValueParam?.split(",") ?? [],
   );
   const [sortValue, setSortValue] = useState<string | null>(
     sortValueParam ?? null,
