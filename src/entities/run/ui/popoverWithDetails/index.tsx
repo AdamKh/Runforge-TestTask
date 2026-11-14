@@ -61,8 +61,10 @@ export function PopoverWithDetails({ setOpen, run }: IPopoverWithDetailsProps) {
           {run.logs?.length > 0 && (
             <InfoItem icon={<Logs />} label="Logs:">
               <div className={styles.logs}>
-                {run.logs.map((log) => (
-                  <code className={styles.log}>$ {log}</code>
+                {run.logs.map((log, index) => (
+                  <code className={styles.log} key={`${index}_${log}`}>
+                    $ {log}
+                  </code>
                 ))}
               </div>
             </InfoItem>

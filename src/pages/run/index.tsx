@@ -58,11 +58,13 @@ export function RunPage() {
           {!isLoading && !isError && filteredRuns.length === 0 && (
             <>
               <p>No runs match your search or filters.</p>
-              <Button
-                extClassNames={{ button: styles.retryButton }}
-                label="Reset filters & search"
-                onClick={reset}
-              />
+              {runs.length !== 0 && (
+                <Button
+                  extClassNames={{ button: styles.retryButton }}
+                  label="Reset filters & search"
+                  onClick={reset}
+                />
+              )}
             </>
           )}
         </div>
