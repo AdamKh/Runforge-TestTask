@@ -42,3 +42,4 @@ npm run dev
 | `npm run build`   | Проверка типов и сборка в папку `dist` (без моков) |
 | `npm run preview` | Просмотр собранной версии (данные не загрузятся)   |
 | `npm run lint`    | Проверка кода ESLint                               |
+| `npm run test`    | Запуск тестов Vitest                               |
