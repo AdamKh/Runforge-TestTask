@@ -4,7 +4,13 @@
   }
   .runs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper .runs {
+    grid-template-columns: 1fr;
   }
 }
