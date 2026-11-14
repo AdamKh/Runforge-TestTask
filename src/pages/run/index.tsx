@@ -10,11 +10,22 @@ import { filterRuns } from "./model/utils";
 import styles from "./styles.module.css";
 
 export function RunPage() {
+  const params = new URLSearchParams(location.search);
+  const searchValueParam = params.get("searchValue");
+  const filtersValueParam = params.get("filtersValue");
+  const sortValueParam = params.get("sortValue");
+
   const { runs, isLoading, isError, refetch } = useRun();
 
-  const [searchValue, setSearchValue] = useState<string>("");
-  const [filtersValue, setFiltersValue] = useState<string[]>([]);
-  const [sortValue, setSortValue] = useState<string | null>(null);
+  const [searchValue, setSearchValue] = useState<string>(
+    searchValueParam ?? "",
+  );
+  const [filtersValue, setFiltersValue] = useState<string[]>(
+    filtersValueParam?.slice(1, -1).split(",") ?? [],
+  );
+  const [sortValue, setSortValue] = useState<string | null>(
+    sortValueParam ?? null,
+  );
 
   const filteredRuns = filterRuns({
     runs,
