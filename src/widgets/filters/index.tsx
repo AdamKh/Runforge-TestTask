@@ -45,6 +45,19 @@ export function Filters({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearch]);
 
+  useEffect(() => {
+    const params = new URLSearchParams();
+
+    if (searchValue) params.set("searchValue", searchValue);
+    if (filtersValue.length) params.set("filtersValue", filtersValue.join(","));
+    if (sortValue) params.set("sortValue", sortValue);
+
+    const query = params.toString();
+    const url = query ? `${location.pathname}?${query}` : location.pathname;
+
+    history.replaceState(null, "", url);
+  }, [searchValue, filtersValue, sortValue]);
+
   return (
     <div className={styles.filters}>
       <Input
