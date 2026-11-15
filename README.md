@@ -4,7 +4,7 @@
 
 ## Демо
 
-Развёрнутая версия: https://your-project.vercel.app
+Развёрнутая версия: https://runforge-test-task.vercel.app
 
 ## Стек
 
